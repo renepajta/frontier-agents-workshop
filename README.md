@@ -63,6 +63,9 @@ This repository contains sample agents, workflows, and MCP servers you can run l
 - `samples/simple-agents/human-in-the-loop.py` – demonstrates human approval / intervention patterns.
 - `samples/workflows/generation-workflow.py` – simple generation-first workflow orchestration sample.
 - `samples/workflows/parallel-agents.py` – runs multiple agents in parallel and aggregates results.
+ - `samples/a2a_communication/server/__main__.py` – A2A weather Q&A agent server sample.
+ - `samples/a2a_communication/agent-client.py` – client sample calling an external A2A-compliant agent.
+
 
 ### MCP servers
 This repo includes several example MCP-compatible servers you can run locally:
@@ -105,6 +108,13 @@ This repo includes several example MCP-compatible servers you can run locally:
 
 ### Scenarios
 
+In this workshop we want to learn about the following enterprise multi agent scenarios:
+- Building multi-agent scenarios with graph based workflows or concurrent orchestration patterns
+- Implementing human in the loop pattern with human approval
+- Integrating MCP servers for different tooling scenarios
+- Moderating a conversation between different agents to distribute problem solving using agents
+- Connecting agents from different platforms using MCP (agents as tool) or A2A (distributed agent communication)
+- Implementing elf-learning agent patterns using memory
 
 ## Troubleshooting
 

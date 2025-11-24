@@ -1,8 +1,10 @@
 # Microsoft Agent Framework
 agent-framework
 # Requirements File
+a2a-sdk==0.3.17
 fastapi==0.121.3
 fastmcp==2.13.1
+httpx==0.28.1
 pydantic==2.12.4
 python-dotenv==1.2.1
 pytz==2025.2
