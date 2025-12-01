@@ -8,6 +8,7 @@ __pycache__/
 scratch.txt
 story.md
 
+**/.DS_Store
 # Distribution / packaging
 .Python
 build/
