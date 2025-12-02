@@ -25,3 +25,8 @@ Input queries:
 
 Tooling tips:
 Start by running the A2A server and client samples to see how two agents communicate before changing any logic. Use the server sample to host your weather agent and expose a function (for example, a tool that returns whether the weather is good on a certain date in a given city). Adapt the client sample so your travel planning agent calls that A2A endpoint instead of doing its own weather reasoning. Keep clear boundaries: treat the weather agent as an external service with a stable interface and let the travel planner focus on itinerary construction and explanation. When debugging, log A2A requests and responses so you can verify which locations and dates were checked and how that influenced the planned trip.
+
+Command to start the a2a server: 
+```
+uv run --env-file .env python -m samples.a2a_communication.server.__main__
+```
