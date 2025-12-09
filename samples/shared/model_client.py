@@ -10,6 +10,8 @@ from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from dotenv import load_dotenv
 from openai import AsyncOpenAI
 
+from .sap_genai_client import build_sap_chat_client, SapAiCoreSettings
+
 # Configure logging for this sample module
 logging.basicConfig(
     level=logging.INFO,
@@ -34,6 +36,17 @@ def create_chat_client(model_name: str) -> BaseChatClient:
     github_token = os.environ.get("GITHUB_TOKEN", "").strip()
     azure_api_key = os.environ.get("AZURE_OPENAI_API_KEY", "").strip()
     azure_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT", "").strip()
+    aicore_endpoint = os.environ.get("AICORE_BASE_URL", "").strip()
+    resource_group = os.environ.get("AICORE_RESOURCE_GROUP", "").strip()
+    scenario_id = os.environ.get("AICORE_SCENARIO_ID", "").strip()
+    api_version = os.environ.get("AICORE_OPENAI_API_VERSION", "2024-10-01-preview").strip()
+    
+    if aicore_endpoint:
+        logger.info("AICORE_BASE_URL found: %s", aicore_endpoint)
+        
+        settings = SapAiCoreSettings(resource_group=resource_group, scenario_id=scenario_id, deployment_name=model_name, api_version=api_version)
+        
+        return build_sap_chat_client(settings)
 
     if azure_endpoint:
         logger.info("AZURE_OPENAI_ENDPOINT found: %s", azure_endpoint)
